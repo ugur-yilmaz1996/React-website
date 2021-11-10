@@ -26,29 +26,60 @@ button {
   border-radius: 10px;
   font-size: 1rem;
   border: none;
-  box-shadow: 0 2px 5px 0 map-get(map-get($palette, blue), 100);
-
-  :hover {
-    //continue here
+  &:enabled {
+    box-shadow: 0 2px 5px 0 map-get(map-get($palette, blue), 100);
   }
-  
+  &:hover {
+    background-color: map-get(map-get($palette, blue), 300);
+    box-shadow: 0 2px 10px 0 map-get(map-get($palette, blue), 100);
+    &:active {
+      background-color: $primary;
+      box-shadow: 0 2px 5px 0 map-get(map-get($palette, blue), 100);
+    }
+  }
+  &:disabled{
+    filter: brightness(50%);
+  }
 }
 
 input {
-
+  width: 300px;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+  font-size: 1rem;
+  padding: 0 10px 0;
+  margin: 1rem;
+  background-color: map-get(map-get($palette, grey), 900);
+  color: map-get(map-get($palette, grey), 400);
+  &:focus {
+    outline-color: $primary;
+  }
+  &::placeholder{
+    color: map-get(map-get($palette, grey), 600);
+  }
 }
 
 div {
-
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
+  width: 100%;
 }
 
 .container {
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid;
+  border-color: $primary;
+  border-radius: 5px;
+  background-color: map-get(map-get($palette, grey), 900);
+  color: map-get(map-get($palette, grey), 400);
 }
 
-.header {
 
-}
 
 .footer {
 
